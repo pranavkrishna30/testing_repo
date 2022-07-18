@@ -1,4 +1,5 @@
 using ScatteredInterpolation
+using Revise
 using Plots
 
 
@@ -10,5 +11,5 @@ xlabel!("Mach")
 ylabel!("Altitude (ft)")
 display(f1)
 itp = interpolate(Linear(), transpose(hcat(mach,altitude)), thrust)
-test = evaluate(itp, [0.36; 20000])
-#test = evaluate(itp,transpose(hcat(mach,altitude)))
+#test = evaluate(itp, [0.36; 20000])
+test = evaluate(itp,transpose(hcat(mach,altitude))) 
